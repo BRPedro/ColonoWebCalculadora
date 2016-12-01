@@ -8,14 +8,14 @@ from datetime import datetime
 
 from django.shortcuts import render, HttpResponse
 
-from paginas.conteoCombinado2 import ConteoCombinado
+from paginas.conteoNivelColor import ConteoCombinado
 from paginas.reporte import Reporte
 import paginas.reporte as rep
 from .forms import UploadFileForm, Parametros
 import paginas.configuracion as conf
 import paginas.formatoImagen as formatosI
 import cv2
-
+from .forms import Parametros
 
 """
 Lanza la pagina principal
@@ -41,11 +41,12 @@ Lanza pagina con el formulario de cargado de imagen
 """
 def formularioImagen(request):
     if request.method == 'POST':
-        form = UploadFileForm(request.POST, request.FILES)
-        copiaImagenServidor(request.FILES['archivo'])
-        temI=cv2.imread('paginas\static\paginaP\img\imagTempW.tif')
-        formatosI.cambio(temI,"imagTempW.jpg")
-        return render(request,'paginas/imagCarga2.html')
+        if 'b1' in request.POST:
+            form = UploadFileForm(request.POST, request.FILES)
+            copiaImagenServidor(request.FILES['archivo'])
+            temI=cv2.imread('paginas\static\paginaP\img\imagTempW.tif')
+            formatosI.cambio(temI,"imagTempW.jpg")
+            return render(request,'paginas/imagCarga2.html')
     else:
         form = UploadFileForm()
 
@@ -55,14 +56,12 @@ def formularioImagen(request):
 Lanza procesamiento de la imagen, para luego presentar resultados.
 """
 def prosesamiento(request):
-    #temI=cv2.imread('paginas\static\paginaP\img\imagTempW.tif')
-    #formatosI.formato(temI,"imagTempW.jpg")
     conteo=ConteoCombinado('paginas\static\paginaP\img\imagTempW.tif')
 
     datos=conf.cargar()
     print datos.ruido,datos.proximidad,datos.circulo
-    resultado=conteo.inicioConteo(int(datos.ruido),float(datos.proximidad),int(datos.circulo))
-    reporte=Reporte(datos.altura,datos.escala,datos.ruido,datos.proximidad,datos.circulo,resultado[1])
+    resultado=conteo.inicioConteo(int(datos.ruido),float(datos.proximidad),int(datos.circulo),int(datos.verde))
+    reporte=Reporte(datos.altura,datos.escala,datos.ruido,datos.proximidad,datos.circulo,resultado[1],0)
     resultado={'res': resultado[1],'tie':resultado[2]
                }
 
@@ -82,6 +81,13 @@ Lanza pagina con el formulario de ajuste de parametros.
 """
 def ajusteParametros(request):
     if request.method == 'POST':
+        form = Parametros(request.POST)
+        if form.is_valid():
+            print "Error"
+            if 'b2' in request.POST:
+                return HttpResponseRedirect('/')
+        else:
+            print "bien"
         if 'b1' in request.POST:
             conf.guardar(request.POST['altura'],request.POST['escala'],request.POST['ruido'],request.POST['proximidad'],request.POST['circulo'],request.POST['verde'])
             return HttpResponseRedirect('/')

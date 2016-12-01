@@ -300,15 +300,6 @@ class ConteoCombinado:
         False: si el intensidad del verde no es aceptable
     """
 
-    def porcentajeVerde(self, rojo, verde, azul, limite):
-        rojoP = float(rojo) * 100 / 255
-        verdeP = float(verde) * 100 / 255
-        azulP = float(azul) * 100 / 255
-        if (verdeP - rojoP) * 100 / verdeP < limite:
-            return False
-        if (verdeP - azulP) * 100 / verdeP < limite:
-            return False
-        return True
 
     # ****************************************************************************************************************************************************************************
 
@@ -324,9 +315,10 @@ class ConteoCombinado:
         for f in range(self.fila):
             for c in range(self.columna):
                 rojo, verde, azul = self.matrizOrig[f][c]
-                if (rojo < verde) and (azul < verde):
+                if (rojo < verde) and (azul < verde) and verde > verdeP:
                     listapuntos.append([[f, c]])
         return listapuntos
+
 
     # ****************************************************************************************************************************************************************************
 

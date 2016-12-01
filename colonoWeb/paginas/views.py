@@ -1,5 +1,7 @@
 import os
 from io import BytesIO
+
+from django.http import HttpResponseRedirect
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
 from datetime import datetime
@@ -81,19 +83,19 @@ Lanza pagina con el formulario de ajuste de parametros.
 def ajusteParametros(request):
     if request.method == 'POST':
         if 'b1' in request.POST:
-            conf.guardar(request.POST['altura'],request.POST['escala'],request.POST['ruido'],request.POST['proximidad'],request.POST['circulo'])
-            return render(request,'paginas/home.html')
+            conf.guardar(request.POST['altura'],request.POST['escala'],request.POST['ruido'],request.POST['proximidad'],request.POST['circulo'],request.POST['verde'])
+            return HttpResponseRedirect('/')
         elif 'b2' in request.POST:
-            return render(request,'paginas/home.html')
+            return HttpResponseRedirect('/')
         elif 'b3' in request.POST:
             carga=conf.predeterminado()
-            form = Parametros(initial={'escala': carga.escala,'altura':carga.altura,'ruido':carga.ruido,'proximidad':carga.proximidad,'circulo':carga.circulo})
+            form = Parametros(initial={'escala': carga.escala,'altura':carga.altura,'ruido':carga.ruido,'proximidad':carga.proximidad,'circulo':carga.circulo,'verde':carga.verde})
             return render(request, 'paginas/ajustes.html', {'form': form})
         form = Parametros(request.POST, request.FILES)
         return render(request,'paginas/imagCarga2.html')
     else:
         carga=conf.cargar()
-        form = Parametros(initial={'escala': carga.escala,'altura':carga.altura,'ruido':carga.ruido,'proximidad':carga.proximidad,'circulo':carga.circulo})
+        form = Parametros(initial={'escala': carga.escala,'altura':carga.altura,'ruido':carga.ruido,'proximidad':carga.proximidad,'circulo':carga.circulo,'verde':carga.verde})
     return render(request, 'paginas/ajustes.html', {'form': form})
 
 """Funcion que crea un PDF con los resultados y parametros con que se analizo la imagen """

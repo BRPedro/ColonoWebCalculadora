@@ -10,4 +10,5 @@ class Parametros(forms.Form):
    escala = forms.DecimalField(label='Escala pixel x metro:',min_value=0.5)
    ruido = forms.IntegerField(label='Filtro de ruido:',min_value=0)
    proximidad=forms.DecimalField(label='Proximidad:',min_value=0.0)
-   circulo= forms.IntegerField(label='Escala circulo',min_value=1)
+   circulo= forms.IntegerField(label='Escala circulo:',min_value=1)
+   verde= forms.IntegerField(label='Verde %:',min_value=1, max_value=255)

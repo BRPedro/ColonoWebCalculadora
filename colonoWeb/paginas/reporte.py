@@ -3,21 +3,23 @@ import pickle
 Clase reporte estructura de datos generales de la imagen.
 """
 class Reporte:
-    def __init__(self,altura,escala,ruido,proximidad,circulo,conteo):
+    def __init__(self,altura,escala,ruido,proximidad,circulo,conteo,verde):
         self.altura=altura
         self.escala=escala
         self.ruido=ruido
         self.proximidad=proximidad
         self.circulo=circulo
         self.conteo=conteo
+        self.verde=verde
 
-    def insertar(self,altura,escala,ruido,proximidad,circulo,conteo):
+    def insertar(self,altura,escala,ruido,proximidad,circulo,conteo,verde):
         self.altura=altura
         self.escala=escala
         self.ruido=ruido
         self.proximidad=proximidad
         self.circulo=circulo
         self.conteo=conteo
+        self.verde=verde
 
 def guardarReporte(reporte):
     fichero=file("paginas/static/paginaP/img/reporte.txt","w")
@@ -29,10 +31,10 @@ def cargarReporte():
     try:
         fichero=file("paginas/static/paginaP/img/reporte.txt")
         r=pickle.load(fichero)
-        obj=Reporte(r.altura,r.escala,r.ruido,r.proximidad,r.circulo,r.conteo)
+        obj=Reporte(r.altura,r.escala,r.ruido,r.proximidad,r.circulo,r.conteo,r.verde)
         return obj
     except:
-        n=Reporte(0,0,0,0,0,0)
+        n=Reporte(0,0,0,0,0,0,0)
         guardarReporte(n)
         return n
 

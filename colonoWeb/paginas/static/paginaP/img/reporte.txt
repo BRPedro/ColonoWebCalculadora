@@ -8,14 +8,14 @@ V5
 p3
 sS'conteo'
 p4
-I1525
+I2251
 sS'escala'
 p5
 V0.5
 p6
 sS'proximidad'
 p7
-V60
+V50
 p8
 sS'circulo'
 p9

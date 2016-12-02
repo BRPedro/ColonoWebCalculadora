@@ -315,8 +315,9 @@ class ConteoCombinado:
         for f in range(self.fila):
             for c in range(self.columna):
                 rojo, verde, azul = self.matrizOrig[f][c]
-                if (rojo < verde) and (azul < verde) and verde > verdeP:
-                    listapuntos.append([[f, c]])
+                if (rojo < verde) and (azul < verde):
+                    if (rojo+azul)//2<verdeP:
+                        listapuntos.append([[f, c]])
         return listapuntos
 
 

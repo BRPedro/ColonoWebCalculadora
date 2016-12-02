@@ -61,12 +61,12 @@ def prosesamiento(request):
     datos=conf.cargar()
     print datos.ruido,datos.proximidad,datos.circulo
     resultado=conteo.inicioConteo(int(datos.ruido),float(datos.proximidad),int(datos.circulo),int(datos.verde))
-    reporte=Reporte(datos.altura,datos.escala,datos.ruido,datos.proximidad,datos.circulo,resultado[1],0)
+    #reporte=Reporte(datos.altura,datos.escala,datos.ruido,datos.proximidad,datos.circulo,resultado[1],0)
     resultado={'res': resultado[1],'tie':resultado[2]
                }
 
     datos.imp()
-    rep.guardarReporte(reporte)
+    #rep.guardarReporte(reporte)
     return render(request,'paginas/imagProc2.html',resultado)
 
 """

@@ -8,7 +8,7 @@ from datetime import datetime
 
 from django.shortcuts import render, HttpResponse
 
-from paginas.conteoNivelColor import ConteoCombinado
+from paginas.conteoCombinado2 import ConteoCombinado
 from paginas.reporte import Reporte
 import paginas.reporte as rep
 from .forms import UploadFileForm, Parametros

@@ -4,7 +4,7 @@ p0
 (dp1
 S'ruido'
 p2
-V10
+V2
 p3
 sS'escala'
 p4
@@ -12,15 +12,15 @@ V0.5
 p5
 sS'proximidad'
 p6
-V23
+V20
 p7
 sS'verde'
 p8
-V121
+V50
 p9
 sS'circulo'
 p10
-V30
+V10
 p11
 sS'altura'
 p12

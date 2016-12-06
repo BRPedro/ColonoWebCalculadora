@@ -50,11 +50,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="conteoGeo.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="conteoGeo.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/paginas/conteoGeo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="231" column="70" selection-start-line="231" selection-start-column="70" selection-end-line="231" selection-end-column="70" />
+            <state relative-caret-position="370">
+              <caret line="373" column="12" selection-start-line="373" selection-start-column="12" selection-end-line="373" selection-end-column="12" />
+              <folding>
+                <element signature="e#46#62#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="conteoGeoHilos.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/paginas/conteoGeoHilos.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-132">
+              <caret line="330" column="27" selection-start-line="330" selection-start-column="27" selection-end-line="330" selection-end-column="27" />
               <folding>
                 <element signature="e#46#62#0" expanded="true" />
               </folding>
@@ -113,14 +125,14 @@
         <option value="$PROJECT_DIR$/paginas/geoI.py" />
         <option value="$PROJECT_DIR$/paginas/geoM.py" />
         <option value="$PROJECT_DIR$/paginas/conteoGeo.py" />
+        <option value="$PROJECT_DIR$/paginas/conteoGeoHilos.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="-7" />
+    <option name="width" value="974" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -204,24 +216,7 @@
       <recent name="D:\Repositorios\Colono\colonoWeb\paginas" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.conteoGeo">
-    <configuration default="false" name="conteoCombinado" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/paginas" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="colonoWeb" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/paginas/conteoCombinado.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.conteoGeoHilos">
     <configuration default="false" name="conteoNivelColor" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -286,6 +281,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="colonoWeb" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/paginas/conteoGeo.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="conteoGeoHilos" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/paginas" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="colonoWeb" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/paginas/conteoGeoHilos.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -425,19 +437,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.conteoCombinado" />
-      <item index="1" class="java.lang.String" itemvalue="Python.conteoNivelColor" />
-      <item index="2" class="java.lang.String" itemvalue="Python.geoM" />
-      <item index="3" class="java.lang.String" itemvalue="Python.geoI" />
-      <item index="4" class="java.lang.String" itemvalue="Python.conteoGeo" />
+      <item index="0" class="java.lang.String" itemvalue="Python.conteoNivelColor" />
+      <item index="1" class="java.lang.String" itemvalue="Python.geoM" />
+      <item index="2" class="java.lang.String" itemvalue="Python.geoI" />
+      <item index="3" class="java.lang.String" itemvalue="Python.conteoGeo" />
+      <item index="4" class="java.lang.String" itemvalue="Python.conteoGeoHilos" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.conteoGeo" />
-        <item index="1" class="java.lang.String" itemvalue="Python.geoM" />
-        <item index="2" class="java.lang.String" itemvalue="Python.geoI" />
-        <item index="3" class="java.lang.String" itemvalue="Python.conteoNivelColor" />
-        <item index="4" class="java.lang.String" itemvalue="Python.conteoCombinado" />
+        <item index="0" class="java.lang.String" itemvalue="Python.conteoGeoHilos" />
+        <item index="1" class="java.lang.String" itemvalue="Python.conteoGeo" />
+        <item index="2" class="java.lang.String" itemvalue="Python.geoM" />
+        <item index="3" class="java.lang.String" itemvalue="Python.geoI" />
+        <item index="4" class="java.lang.String" itemvalue="Python.conteoNivelColor" />
       </list>
     </recent_temporary>
   </component>
@@ -464,15 +476,15 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-7" y="0" width="974" height="1040" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12552084" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25156575" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.307611" sideWeight="0.5020964" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23784356" sideWeight="0.50416666" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.307611" sideWeight="0.49790356" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24193548" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -520,7 +532,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hola.jpg" />
     <entry file="file://$PROJECT_DIR$/paginas/static/paginaP/img/profile.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -770,7 +781,7 @@
         <state relative-caret-position="292">
           <caret line="79" column="8" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="8" />
           <folding>
-            <element signature="e#0#22#0" expanded="true" />
+            <element signature="e#0#22#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -817,8 +828,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/paginas/conteoGeo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="231" column="70" selection-start-line="231" selection-start-column="70" selection-end-line="231" selection-end-column="70" />
+        <state relative-caret-position="370">
+          <caret line="373" column="12" selection-start-line="373" selection-start-column="12" selection-end-line="373" selection-end-column="12" />
+          <folding>
+            <element signature="e#46#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/paginas/conteoGeoHilos.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-132">
+          <caret line="330" column="27" selection-start-line="330" selection-start-column="27" selection-end-line="330" selection-end-column="27" />
           <folding>
             <element signature="e#46#62#0" expanded="true" />
           </folding>

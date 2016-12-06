@@ -17,6 +17,8 @@ class ConteoGeo:
         self.fila = self.imagen.RasterYSize  # dimensiones de la imagen.
         self.columna = self.imagen.RasterXSize  # dimensiones de la imagen.
         self.centroides = []  # lista de coordenadas de los centros de los patrones.
+        self.listaVerde=[]
+        self.hilos=0
 
     # ***************************************************************************************************
 
@@ -233,7 +235,7 @@ class ConteoGeo:
         tiempo_inicial = time()
         try:
             print "Paso 1 de 5"
-            listapuntos = self.filtroVerde()
+            listapuntos = self.filtroVerdeHiloInicio()
 
             print "Paso 2 de 5"
             listapuntos = self.agrupamientoXvecinosInicial(listapuntos)
@@ -334,6 +336,36 @@ class ConteoGeo:
                 if (rojo < verde) and (azul < verde):
                     listapuntos.append([[f, c]])
         return listapuntos
+
+    def filtroVerdeHilo(self,inicioF,finF):
+        for f in range(inicioF,finF):
+            for c in range(self.columna):
+                rojo, verde, azul, infrarrojo = self.getPixelPosicion( c,f)
+                if (rojo < verde) and (azul < verde):
+                    self.listaVerde.append([[f,c]])
+        self.hilos+=1
+        return
+
+    def filtroVerdeHiloInicio(self):
+        self.hilos=0
+        parte=int(self.fila//6)
+        t1 = threading.Thread(target=self.filtroVerdeHilo,args=(0,parte,))
+        t1.start()
+        t2 = threading.Thread(target=self.filtroVerdeHilo,args=(parte,parte*2,))
+        t2.start()
+        t3 = threading.Thread(target=self.filtroVerdeHilo,args=(parte*2,parte*3,))
+        t3.start()
+        t4 = threading.Thread(target=self.filtroVerdeHilo,args=(parte*3,parte*4,))
+        t4.start()
+        t5 = threading.Thread(target=self.filtroVerdeHilo,args=(parte*4,parte*5,))
+        t5.start()
+        t6 = threading.Thread(target=self.filtroVerdeHilo,args=(parte*5,self.fila,))
+        t6.start()
+        while self.hilos>=6:
+            print len(self.listaVerde)
+            time.sleep(120)
+        return self.listaVerde
+
 
     # ****************************************************************************************************************************************************************************
 

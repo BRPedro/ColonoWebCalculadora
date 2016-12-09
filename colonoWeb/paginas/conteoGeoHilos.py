@@ -3,6 +3,8 @@
 import threading
 from time import time
 
+from paginas.conexion import BDConexion
+
 __author__ = "Pedro Barrantes R"
 __date__ = "$11/10/2016 09:44:07 AM$"
 
@@ -236,7 +238,7 @@ class ConteoGeo:
         try:
             print "Paso 1 de 5"
             listapuntos = self.filtroVerdeHiloInicio()
-
+            """
             print "Paso 2 de 5"
             listapuntos = self.agrupamientoXvecinosInicial(listapuntos)
 
@@ -248,7 +250,7 @@ class ConteoGeo:
 
             print "Paso 5 de 5"
             #tem = self.dibujarCirculos(circulo)
-
+            """
             print "FIN..."
             tiempo_final = time()
             tiempo_total = tiempo_final - tiempo_inicial
@@ -338,12 +340,14 @@ class ConteoGeo:
         return listapuntos
 
     def filtroVerdeHilo(self,inicioF,finF):
+        bd=BDConexion('BDAPTECH','colono14','1234')
         for f in range(inicioF,finF):
             for c in range(self.columna):
                 rojo, verde, azul, infrarrojo = self.getPixelPosicion( c,f)
                 if (rojo < verde) and (azul < verde):
-                    self.listaVerde.append([[f,c]])
+                    bd.insertarTC_COORDENADA(f,c)
         self.hilos+=1
+        bd.desconectar()
         return
 
     def filtroVerdeHiloInicio(self):
@@ -361,7 +365,7 @@ class ConteoGeo:
         t5.start()
         t6 = threading.Thread(target=self.filtroVerdeHilo,args=(parte*5,self.fila,))
         t6.start()
-        while self.hilos>=6:
+        while self.hilos<6:
             print len(self.listaVerde)
             time.sleep(120)
         return self.listaVerde

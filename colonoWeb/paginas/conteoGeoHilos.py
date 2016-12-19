@@ -236,8 +236,8 @@ class ConteoGeo:
     def contadorAgrupado(self, limitePatron, limiteCercania, circulo):
         tiempo_inicial = time()
         try:
-            print "Paso 1 de 5"
-            listapuntos = self.filtroVerdeHiloInicio()
+            print "Paso 1"
+            self.filtroVerdeHiloInicio()
             """
             print "Paso 2 de 5"
             listapuntos = self.agrupamientoXvecinosInicial(listapuntos)
@@ -251,6 +251,10 @@ class ConteoGeo:
             print "Paso 5 de 5"
             #tem = self.dibujarCirculos(circulo)
             """
+            print "Paso 2"
+            self.limiteBD(limitePatron)
+            print "Paso 3"
+            self.centroides()
             print "FIN..."
             tiempo_final = time()
             tiempo_total = tiempo_final - tiempo_inicial
@@ -350,9 +354,21 @@ class ConteoGeo:
         bd.desconectar()
         return
 
+    def limiteBD(self,limite):
+        bd=BDConexion('BDAPTECH','colono14','1234')
+        bd.borradolimite(limite)
+        bd.desconectar()
+        return
+
+    def centroides(self):
+        bd=BDConexion('BDAPTECH','colono14','1234')
+        bd.centroides()
+        bd.desconectar()
+        return
+
     def filtroVerdeHiloInicio(self):
         self.hilos=0
-        parte=int(self.fila//6)
+        parte=int(self.fila//8)
         t1 = threading.Thread(target=self.filtroVerdeHilo,args=(0,parte,))
         t1.start()
         t2 = threading.Thread(target=self.filtroVerdeHilo,args=(parte,parte*2,))
@@ -363,12 +379,15 @@ class ConteoGeo:
         t4.start()
         t5 = threading.Thread(target=self.filtroVerdeHilo,args=(parte*4,parte*5,))
         t5.start()
-        t6 = threading.Thread(target=self.filtroVerdeHilo,args=(parte*5,self.fila,))
+        t6 = threading.Thread(target=self.filtroVerdeHilo,args=(parte*5,parte*6,))
         t6.start()
-        while self.hilos<6:
-            print len(self.listaVerde)
-            time.sleep(120)
-        return self.listaVerde
+        t7 = threading.Thread(target=self.filtroVerdeHilo,args=(parte*6,parte*7,))
+        t7.start()
+        t8 = threading.Thread(target=self.filtroVerdeHilo,args=(parte*7,self.fila,))
+        t8.start()
+        while self.hilos<7:
+            time.sleep(60)
+        return;
 
 
     # ****************************************************************************************************************************************************************************
@@ -419,5 +438,5 @@ class ConteoGeo:
 # ______________________________________________________________________________________________________________________________________________________________________________
 
 
-nn=ConteoGeo('C:\\Users\\aariasr\\Documents\\exom- seccion 2 completa_transparent_mosaic_group1.tif')
+nn=ConteoGeo('C:\\Users\\\PBR\\Documents\\exom- seccion 2 completa_transparent_mosaic_group1.tif')
 print nn.inicioConteo(5,50,10)

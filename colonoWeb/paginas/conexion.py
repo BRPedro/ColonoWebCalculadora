@@ -14,7 +14,27 @@ class BDConexion:
     def insertarTC_COORDENADA(self,fila,columana):
         try:
             cur = self.conn.cursor()
-            cur.execute("INSERT INTO paginas_tc_coordenada (\"FILA_C\",\"COLUMNA_C\") VALUES("+str(fila)+","+str(columana)+")")
+            cur.execute("select insercioncoordenasas("+str(fila)+","+str(columana)+")")
+            self.conn.commit()
+        except psycopg2.DatabaseError, e:
+            print e
+            if self.conn:
+                self.conn.rollback()
+
+    def borradolimite(self,limite):
+        try:
+            cur = self.conn.cursor()
+            cur.execute("select borradolimite(" + str(limite) +  ")")
+            self.conn.commit()
+        except psycopg2.DatabaseError, e:
+            print e
+            if self.conn:
+                self.conn.rollback()
+
+    def centroides(self):
+        try:
+            cur = self.conn.cursor()
+            cur.execute("select centroides()")
             self.conn.commit()
         except psycopg2.DatabaseError, e:
             print e
